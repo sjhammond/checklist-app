@@ -1,0 +1,21 @@
+{
+  "name": "milestone-bpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^4.0.1",
+    "electron-debug": "^2.1.0",
+    "electron-is-dev": "^1.0.1",
+    "electron-reload": "^1.4.0",
+    "idb": "^3.0.2",
+    "jquery": "^3.3.1"
+  }
+}
