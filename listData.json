@@ -14,56 +14,55 @@
                             "stepID": "1A",
                             "stepTitle": "Confirm passwords and settings on existing network and server equipment",
                             "productTier": 1,
-                            "mcieOnly": false,
-                            "infoPath": "info_content/document.htm"
+                            "infoPath": "../info_content/document.htm"
                         },
                         {
                             "stepID": "1B",
                             "stepTitle": "Check switches",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1C",
                             "stepTitle": "Determine IP Address Ranges",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1D",
                             "stepTitle": "Configure the Network",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1E",
                             "stepTitle": "Test the Network",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1F",
                             "stepTitle": "Check Network Time Protocol (NTP) Server",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1G",
                             "stepTitle": "Check Access to Microsoft Active Directory",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1H",
                             "stepTitle": "Verify Microsoft SQL server access and permissions",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "1I",
                             "stepTitle": "Verify access to remote XProtect VMS systems that will be interconnected",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -76,37 +75,37 @@
                             "stepID": "2A",
                             "stepTitle": "Set a static IP address or configure DHCP and hostname",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "2B",
                             "stepTitle": "Set administrator account credentials",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "2C",
                             "stepTitle": "Verify firmware version with Milestone Supported Devices list",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "2D",
                             "stepTitle": "Mount cameras and other IP hardware devices",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "2E",
                             "stepTitle": "Configure additional device settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "2F",
                             "stepTitle": "Install Milestone Screen recorder",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -119,61 +118,61 @@
                             "stepID": "3A",
                             "stepTitle": "Install operating system environment",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3B",
                             "stepTitle": "Set and verify network settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3C",
                             "stepTitle": "Check server access",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3D",
                             "stepTitle": "Add and verify user accounts and passwords",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3E",
                             "stepTitle": "Enable remote management, such as Windows Remote Desktop",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3F",
                             "stepTitle": "Check Server time",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3G",
                             "stepTitle": "Install all important Windows Updates",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3H",
                             "stepTitle": "Check additional server software and settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3I",
                             "stepTitle": "Add anti-virus scan exceptions",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "3J",
                             "stepTitle": "Enable SNMP traps",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -186,13 +185,13 @@
                             "stepID": "4A",
                             "stepTitle": "Prepare storage system",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "4B",
                             "stepTitle": "Verify access to remote storage",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -205,19 +204,19 @@
                             "stepID": "5A",
                             "stepTitle": "Prepare for installation",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "5B",
                             "stepTitle": "Run the Management Server installer",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "5C",
                             "stepTitle": "Verify the Management Server is running",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -230,19 +229,19 @@
                             "stepID": "6A",
                             "stepTitle": "Download and run Milestone Mobile server software from the Management Server",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "6B",
                             "stepTitle": "Specify URL and credentials to connect to the Management Server",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "6C",
                             "stepTitle": "Verify the Mobile Server is running",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -255,31 +254,31 @@
                             "stepID": "7A",
                             "stepTitle": "Prepare for installation",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "7B",
                             "stepTitle": "Download and run the XProtect Recording Server installer from the Management Server",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "7C",
                             "stepTitle": "Verify the server is running",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "7D",
                             "stepTitle": "Install a different device pack",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "7E",
                             "stepTitle": "Add anti-virus scan exceptions",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -292,31 +291,31 @@
                             "stepID": "8A",
                             "stepTitle": "Prepare for installation",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "8B",
                             "stepTitle": "Download and run the XProtect Recording Server installer from the Management Server",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "8C",
                             "stepTitle": "Verify the server is running",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "8D",
                             "stepTitle": "Install a different device pack",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "8E",
                             "stepTitle": "Add anti-virus scan exceptions",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -329,13 +328,13 @@
                             "stepID": "9A",
                             "stepTitle": "Prepare for installation",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "9B",
                             "stepTitle": "Download and run the Management Client software from the Management Server",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 }
@@ -354,73 +353,73 @@
                             "stepID": "10A",
                             "stepTitle": "Log in with the Management Client",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10B",
                             "stepTitle": "Basic authentication",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10C",
                             "stepTitle": "Configure Management Client behavior",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10D",
                             "stepTitle": "Configure Recording Server timeout settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10E",
                             "stepTitle": "Configure Log Server settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10F",
                             "stepTitle": "Configure email notification settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10G",
                             "stepTitle": "Verify bookmark default behavior",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10H",
                             "stepTitle": "Create Evidence Lock profiles",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10I",
                             "stepTitle": "Add Audio Messages",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10J",
                             "stepTitle": "Configure Customer Dashboard connectivity",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10K",
                             "stepTitle": "Configure alarm and event settings",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "10L",
                             "stepTitle": "Generic Event settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -433,19 +432,19 @@
                             "stepID": "11A",
                             "stepTitle": "Review license information",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "11B",
                             "stepTitle": "Activate license",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "11C",
                             "stepTitle": "Enter and verify the site information",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -458,31 +457,31 @@
                             "stepID": "12A",
                             "stepTitle": "Define failover servers",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "12B",
                             "stepTitle": "Review and update recording server information",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "12C",
                             "stepTitle": "Configure Recording Server storage settings",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "12D",
                             "stepTitle": "Configure archiving",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "12E",
                             "stepTitle": "Assign Failover Servers to Recording Servers",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -495,13 +494,13 @@
                             "stepID": "13A",
                             "stepTitle": "Add and name hardware devices",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "13B",
                             "stepTitle": "Disable all unused encoder video channels",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -514,49 +513,49 @@
                             "stepID": "14A",
                             "stepTitle": "Name hardware devices",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14B",
                             "stepTitle": "Name cameras",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14C",
                             "stepTitle": "Name microphones and speakers",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14D",
                             "stepTitle": "Name inputs and outputs",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14E",
                             "stepTitle": "Name metadata channels",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14F",
                             "stepTitle": "Disable unused devices",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14G",
                             "stepTitle": "Create additional camera, microphone, speaker, input, output, and metadata device groups",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "14H",
                             "stepTitle": "Add devices to the relevant groups",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -569,61 +568,61 @@
                             "stepID": "15A",
                             "stepTitle": "Review and update device information",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15B",
                             "stepTitle": "Configure device settings and define video streams",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15C",
                             "stepTitle": "Configure streams",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15D",
                             "stepTitle": "Configure recording",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15E",
                             "stepTitle": "Configure 360° lens settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15F",
                             "stepTitle": "Configure privacy masking",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15G",
                             "stepTitle": "Configure software Motion Detection",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15H",
                             "stepTitle": "Configure camera events",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15I",
                             "stepTitle": "Configure PTZ presets",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "15J",
                             "stepTitle": "Configure PTZ patrolling",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -636,43 +635,43 @@
                             "stepID": "16A",
                             "stepTitle": "Verify microphone settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16B",
                             "stepTitle": "Verify and adjust microphone recording settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16C",
                             "stepTitle": "Select microphone recording storage",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16D",
                             "stepTitle": "Configure microphone events",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16E",
                             "stepTitle": "Verify speaker settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16F",
                             "stepTitle": "Verify and adjust speaker recording settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "16G",
                             "stepTitle": "Select speaker recording storage",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -685,25 +684,25 @@
                             "stepID": "17A",
                             "stepTitle": "Verify input settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "17B",
                             "stepTitle": "Configure input events",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "17C",
                             "stepTitle": "Verify output settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "17D",
                             "stepTitle": "Test inputs and outputs",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -716,25 +715,25 @@
                             "stepID": "18A",
                             "stepTitle": "Create custom View Groups",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "18B",
                             "stepTitle": "Configure Smart Client Profiles",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "18C",
                             "stepTitle": "Configure Matrix recipient details",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "18D",
                             "stepTitle": "Configure Smart Walls",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -747,13 +746,13 @@
                             "stepID": "19A",
                             "stepTitle": "Create User-defined Events",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "19A",
                             "stepTitle": "Configure Generic Events",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 }
@@ -772,19 +771,19 @@
                             "stepID": "20A",
                             "stepTitle": "Define single and recurring Time Profiles",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "20B",
                             "stepTitle": "Define Day Length time profiles",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "20C",
                             "stepTitle": "Create notification profiles",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -797,31 +796,31 @@
                             "stepID": "21A",
                             "stepTitle": "Verify default rules",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "21B",
                             "stepTitle": "Create video and audio feed start and recording rules",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "21C",
                             "stepTitle": "Create other installation-specific rules",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "21D",
                             "stepTitle": "Create system administrator email notification rules",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "21E",
                             "stepTitle": "Validate all rules",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -834,55 +833,55 @@
                             "stepID": "22A",
                             "stepTitle": "Verify Windows users and groups",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22B",
                             "stepTitle": "Create Basic Users",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22C",
                             "stepTitle": "Create Roles",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22D",
                             "stepTitle": "Assign client behavior and time profiles",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22E",
                             "stepTitle": "Configure client permissions and login authorization requirements",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22F",
                             "stepTitle": "Assign users and groups to each role",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22G",
                             "stepTitle": "Define overall security settings for each role",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22H",
                             "stepTitle": "Define detail security settings for each role",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "22I",
                             "stepTitle": "Verify effective roles",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -895,19 +894,19 @@
                             "stepID": "23A",
                             "stepTitle": "Add and remove alarm sounds",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "23B",
                             "stepTitle": "Configure alarm data settings",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "23C",
                             "stepTitle": "Define alarm definitions",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -920,25 +919,25 @@
                             "stepID": "24A",
                             "stepTitle": "Verify system performance via System Monitor",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "24B",
                             "stepTitle": "Verify connectivity to Customer Dashboard",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "24C",
                             "stepTitle": "Verify SNMP trap connectivity",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "24D",
                             "stepTitle": "Check log files",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 }
@@ -957,43 +956,43 @@
                             "stepID": "25A",
                             "stepTitle": "Install Milestone Mobile server (if not done previously)",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25B",
                             "stepTitle": "Configure general settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25C",
                             "stepTitle": "Configure connectivity settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25D",
                             "stepTitle": "Configure performance settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25E",
                             "stepTitle": "Configure Investigation settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25F",
                             "stepTitle": "Configure Video Push",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "25G",
                             "stepTitle": "Configure Push Notifications",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1006,25 +1005,25 @@
                             "stepID": "26A",
                             "stepTitle": "Add Interconnected systems",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "26B",
                             "stepTitle": "Select Interconnected cameras",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "26C",
                             "stepTitle": "Verify feed start and recording rules for Interconnected cameras",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "26D",
                             "stepTitle": "Verify user permissions to Interconnected cameras",
                             "productTier": 5,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1037,19 +1036,19 @@
                             "stepID": "27A",
                             "stepTitle": "Activate license",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "27B",
                             "stepTitle": "Enable automatic license activation",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "27C",
                             "stepTitle": "Verify license information",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1062,55 +1061,55 @@
                             "stepID": "28A",
                             "stepTitle": "Check workstation hardware, software, and settings",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28B",
                             "stepTitle": "Download and run Smart Client installer from the Management Server",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28C",
                             "stepTitle": "Create views for each view group",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28D",
                             "stepTitle": "Verify hardware decoding/performance",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28E",
                             "stepTitle": "Create maps and Smart Map",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28F",
                             "stepTitle": "Verify user logins and permissions",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28G",
                             "stepTitle": "Verify audio permissions",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28H",
                             "stepTitle": "Verify Smart Wall permissions",
                             "productTier": 4,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "28I",
                             "stepTitle": "Configure Smart Client Options",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1123,13 +1122,13 @@
                             "stepID": "29A",
                             "stepTitle": "Create browser shortcut",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "29B",
                             "stepTitle": "Verify user logins",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1142,25 +1141,25 @@
                             "stepID": "30A",
                             "stepTitle": "Install app from relevant online marketplace",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "30B",
                             "stepTitle": "Verify user logins",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "30C",
                             "stepTitle": "Test Video Push",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "30D",
                             "stepTitle": "Verify Push Notifications",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1173,37 +1172,37 @@
                             "stepID": "31A",
                             "stepTitle": "Perform a walk test for all cameras with motion detection",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "31B",
                             "stepTitle": "Create a configuration report",
                             "productTier": 2,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "31C",
                             "stepTitle": "Make a configuration backup",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "31D",
                             "stepTitle": "Perform Final Acceptance Test",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "31E",
                             "stepTitle": "Perform customer operator and staff training",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "31F",
                             "stepTitle": "Confirm Statement of Work fulfilment",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 },
@@ -1216,55 +1215,55 @@
                             "stepID": "32A",
                             "stepTitle": "Replace a hardware device",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32B",
                             "stepTitle": "Move a hardware device to another Recording Server",
                             "productTier": 3,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32C",
                             "stepTitle": "Save and load a system configuration",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32D",
                             "stepTitle": "Configure the Download Manager",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32E",
                             "stepTitle": "Upgrade the system",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32F",
                             "stepTitle": "Explain and manage key system behaviors",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32G",
                             "stepTitle": "Perform SQL server maintenance",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32H",
                             "stepTitle": "Perform critical server maintenance",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         },
                         {
                             "stepID": "32I",
                             "stepTitle": "Manage profitability and customer expectations",
                             "productTier": 1,
-                            "mcieOnly": false
+                            "infoPath": ""
                         }
                     ]
                 }

@@ -1,4 +1,4 @@
-let output = ''
+let deploymentList = ``
 
 //get the db then create a transaction, open obj store, and open cursor
 dbPromise
@@ -11,7 +11,7 @@ dbPromise
         if (!cursor) {
             return;
         }
-        output += `
+        deploymentList += `
                 <tr>
                     <td>
                         ${cursor.value.id}
@@ -34,5 +34,9 @@ dbPromise
         return cursor.continue().then(displayDeployments)
     })
     .then(() => {
-        document.getElementById('deploymentTable').innerHTML = output
+        if (deploymentList !== ``){
+            let noDeployments = document.getElementById('no-deployments')
+            noDeployments.style.display = 'none'
+            document.getElementById('deployment-list__body').innerHTML = deploymentList
+        }
     })

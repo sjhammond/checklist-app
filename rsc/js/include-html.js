@@ -9,7 +9,7 @@ function includeHTML() {
         if (file) {
             /* Make an HTTP request using the 'include-html' attribute value as the file name: */
             xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = () => {
+            xhttp.onreadystatechange = function() {
                 if (this.readyState == 4) {
                     if (this.status == 200) { 
                         //EDIT THIS BIT TO STRIP META AND REL TAGS FROM FLARE TOPICS

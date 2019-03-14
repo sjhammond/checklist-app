@@ -1,10 +1,9 @@
-//pull in the list data from the separate JSON file
-const listData = require('./listData.json'),
+const listData = require('../listData.json'),
     urlParams = new URLSearchParams(window.location.search),
     strId = urlParams.get('id'),
     id = parseInt(strId)
 
-let deployment = ''
+let deployment = undefined
 
 //load the db, open obj store, get the deployment, and render the list for the deployment's current phase
 dbPromise
@@ -15,8 +14,8 @@ dbPromise
     })
     .then(result => {
         deployment = result
-        document.getElementById("main-content").innerHTML = `${listData.deploymentPhases[deployment.currentPhase].phaseTasks.map(taskTemplate).join("")}`
         document.getElementById("header-title").innerHTML = `${listData.deploymentPhases[deployment.currentPhase].phaseTitle}`
+        document.getElementById("main-content").innerHTML = `${listData.deploymentPhases[deployment.currentPhase].phaseTasks.map(taskTemplate).join("")}`
     })
     .then(() => {
         includeHTML()
@@ -24,10 +23,8 @@ dbPromise
     })
 
 
-/* 
-helper function that generates the task-level html for each task in the deployment phase
-only the tasks whose productTier is equal to or less than the currentProduct are generated
-*/
+//helper function that generates the task-level html for each task in the deployment phase
+//only the tasks whose productTier is equal to or less than the currentProduct are generated
 function taskTemplate(t) {
     if (t.productTier <= deployment.product) {
         return `
@@ -40,10 +37,8 @@ function taskTemplate(t) {
     }
 }
 
-/* 
-helper function that generates the step-level html for each task in the deployment phase
-only the steps whose productTier is equal to or less than the currentProduct are generated 
-*/
+//helper function that generates the step-level html for each task in the deployment phase
+//only the steps whose productTier is equal to or less than the currentProduct are generated 
 function stepTemplate(s) {
     if (s.productTier <= deployment.product) {
         return `
