@@ -1,5 +1,4 @@
-//declare an output var
-let output = ""
+let output = ''
 
 //get the db then create a transaction, open obj store, and open cursor
 dbPromise
@@ -28,10 +27,12 @@ dbPromise
                     </td>
                     <td>
                         ${(cursor.value.dateModified).toLocaleString()}
-                     </td>
+                    </td>
                 </tr>
             `
         //iterate through the cursor and display each item in the object store
         return cursor.continue().then(displayDeployments)
     })
-    .then(() => document.getElementById('deploymentTable').innerHTML = output)
+    .then(() => {
+        document.getElementById('deploymentTable').innerHTML = output
+    })

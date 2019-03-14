@@ -1,13 +1,17 @@
 //pull in the list data from the separate JSON file
-const listData = require('./listData.json')
-let deployment
+const listData = require('./listData.json'),
+    urlParams = new URLSearchParams(window.location.search),
+    strId = urlParams.get('id'),
+    id = parseInt(strId)
+
+let deployment = ''
 
 //load the db, open obj store, get the deployment, and render the list for the deployment's current phase
 dbPromise
     .then(db => {
         let tx = db.transaction('deployments', 'readwrite'),
             store = tx.objectStore('deployments')
-        return store.get(1);
+        return store.get(id);
     })
     .then(result => {
         deployment = result

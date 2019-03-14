@@ -15,7 +15,7 @@
                             "stepTitle": "Confirm passwords and settings on existing network and server equipment",
                             "productTier": 1,
                             "mcieOnly": false,
-                            "infoPath": "content/document.htm"
+                            "infoPath": "info_content/document.htm"
                         },
                         {
                             "stepID": "1B",

@@ -10,6 +10,5 @@ let dbPromise = idb.openDb('appDb', 1, upgradeDb => {
     }
 })
 
-//on complete, log db-open notification in console
 dbPromise
     .then(db => console.log(`${db.name} version ${db.version} open.`))
