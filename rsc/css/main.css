@@ -257,7 +257,7 @@ a::selection {
 	fill:#ced6db;
 }
 
-#settings_icon{
+.menu-icon_bottom {
 	position: fixed;
 	left: 8px;
 	bottom: 18px
@@ -272,7 +272,7 @@ a::selection {
 	flex-direction: column;
 	align-items: center;
 	counter-reset: task;
-	overflow-y: scroll;
+	/* overflow-y: auto; */
 }
 
 .container::-webkit-scrollbar {

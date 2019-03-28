@@ -1,7 +1,6 @@
-const { app, BrowserWindow } = require('electron')
-const debug = require('electron-debug')
-const isDev = require('electron-is-dev')
-require ('electron-reload')(__dirname)
+const { app, BrowserWindow } = require('electron'),
+ debug = require('electron-debug'),
+ isDev = require('electron-is-dev')
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
@@ -9,6 +8,7 @@ let win
 
 //if in development, use electron-debug
 if(isDev){
+  require('electron-reload')(__dirname, {ignored: /data|[\/\\]\./})
   debug();
 }
 
@@ -32,7 +32,7 @@ function createWindow () {
   win.setMenu(null)
 
   // and load the index.html of the app.
-  win.loadFile('index.html')
+  win.loadFile('deployment-list.html')
 
   // Emitted when the window is closed.
   win.on('closed', () => {

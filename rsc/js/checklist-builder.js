@@ -1,4 +1,4 @@
-const listData = require('../listData.json'),
+const listData = require('./listData.json'),
     urlParams = new URLSearchParams(window.location.search),
     strId = urlParams.get('id'),
     id = parseInt(strId)
@@ -10,7 +10,7 @@ dbPromise
     .then(db => {
         let tx = db.transaction('deployments', 'readwrite'),
             store = tx.objectStore('deployments')
-        return store.get(id);
+        return store.get(id)
     })
     .then(result => {
         deployment = result
@@ -21,7 +21,6 @@ dbPromise
         includeHTML()
         toggleInfo()
     })
-
 
 //helper function that generates the task-level html for each task in the deployment phase
 //only the tasks whose productTier is equal to or less than the currentProduct are generated

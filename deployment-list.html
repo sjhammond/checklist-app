@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="rsc/css/main.css">
+    <script src="./rsc/js/global.js"></script>
+    <script src="./rsc/js/deployment.js"></script>
+    <script src="./rsc/js/deployment-list.js"></script>
+</head>
+<body>
+    <div class="container">
+        <a href="./create-deployment.html">Create New Deployment</a>
+        <div id="deployment-list">
+            <table>
+                <thead>
+                    <tr>
+                        <td>
+                            Project Name
+                        </td>
+                        <td>
+                            XProtect Product
+                        </td>
+                        <td>
+                            Date Created
+                        </td>
+                        <td>
+                            Last Modified
+                        </td>
+                    </tr>
+                </thead>
+                <tbody id="deployment-list__body">
+                    <!--body filled in by display-deployments.js-->
+                </tbody>
+            </table>
+        </div>
+        <div id="no-deployments">
+            No deployments found. Select <b>Create New Deployment</b> to get started.
+        </div>
+    </div>
+    <!--container-->
+    <script>displayDeployments("deployment-list__body")</script>
+</body>

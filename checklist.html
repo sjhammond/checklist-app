@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="./rsc/css/main.css">
+    <script src="./rsc/js/global.js"></script>
+</head>
+<body>
+    <nav class="sidenav" id="menu">
+        <div id="sidenav-top-spacer" onclick=window.history.back()>
+            <a class="menu-icon" id="back_icon" href="#"></a>
+        </div>
+        <div class="menu-icon-spacer">
+            <a class="menu-icon" id="save_icon" href="#"></a>
+        </div>
+        <div class="menu-icon-spacer">
+            <a class="menu-icon" id="my-deployments_icon" href="./deployment-list.html"></a>
+        </div>
+        <div class="menu-icon-spacer">
+            <a class="menu-icon" id="add-new_icon" href="./create-deployment.html"></a>
+        </div>
+        <div class="menu-icon-sapcer" id="menu-icon_bottom">
+            <a class="menu-icon" id="settings_icon" href="#"></a>
+        </div>
+        <!--settings icon-->
+    </nav>
+    <!--sidenav-->
+    <header class="header">
+        <div class="header-progress">
+            <span class="header-progress-border"></span>
+            <span class="header-progress-bar"></span>
+        </div>
+        <!--progress bar-->
+        <div class="header-content">
+            <div id="header-title">Title</div>
+            <div class="header-progress-reset">
+                <span class="header-progress-count">0/X</span>
+                <input class="header-reset-btn" type="reset" value="Reset" title="Reset Checkboxes" tabindex="0">
+            </div>
+            <!--progress count and reset-->
+        </div>
+        <!--header content-->
+    </header>
+    <!--header-->
+    <main class="container" id="main-content"></main>
+    <!--main content-->
+    <script>
+        loadHtml("#back_icon", "./rsc/svg/backarrow.svg")
+        loadHtml("#save_icon", "./rsc/svg/save.svg")
+        loadHtml("#my-deployments_icon", "./rsc/svg/mydeployments.svg")
+        loadHtml("#add-new_icon", "./rsc/svg/new.svg")
+        loadHtml("#settings_icon", "./rsc/svg/settings.svg")
+    </script>
+    <script src='./rsc/js/info-toggler.js'></script>
+    <script src='./rsc/js/include-html.js'></script>
+    <script src='./rsc/js/checklist-builder.js'></script>
+    <script src='./rsc/js/checkbox-data.js'></script>
+</body>
