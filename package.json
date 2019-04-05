@@ -17,18 +17,11 @@
     "electron-debug": "^2.1.0",
     "electron-is-dev": "^1.0.1",
     "electron-reload": "^1.4.0",
-<<<<<<< HEAD
-=======
     "idb": "^4.0.1",
->>>>>>> 59bee1b06e3ea8e69660c27f671de0bafe9ac1f2
     "jquery": "^3.3.1",
     "typescript": "^3.4.1"
   },
   "devDependencies": {
-<<<<<<< HEAD
-    "electron-packager": "^13.1.1",
-    "electron-rebuild": "^1.8.4"
-=======
     "@babel/core": "^7.4.3",
     "@babel/plugin-transform-runtime": "^7.4.3",
     "@babel/preset-env": "^7.4.3",
@@ -42,6 +35,5 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-node-externals": "^1.7.2"
->>>>>>> 59bee1b06e3ea8e69660c27f671de0bafe9ac1f2
   }
 }

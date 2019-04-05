@@ -1,13 +1,8 @@
-<<<<<<< HEAD:rsc/js/info-toggler.js
-function toggleInfo() {
-  $('.info-container, .note-container').hide()
-=======
 import $ from 'jquery';
 
 export const toggleInfo = () => {
   $('.info-container').hide()
   $('.note-container').hide()
->>>>>>> 59bee1b06e3ea8e69660c27f671de0bafe9ac1f2:src/renderer/helpers/info-toggler.ts
 
   //toggle more information when clicking the "more info" icon
   $('body').on('click', '.checklist-item__expand', function () {
