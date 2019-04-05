@@ -3,6 +3,6 @@ document.getElementById('newDeploymentBtn').onclick = () => {
     let p = document.querySelector('input[name="radio"]:checked').value,
         n = document.getElementById('deploymentName').value,
         d = new Deployment(p, n)
-    d.create();
-    window.location.href = "./checklist.html"
+    d.create()
+    .then(result => window.location.href = "./checklist.html?id=" + result)
 }

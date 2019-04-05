@@ -1,13 +1,19 @@
-//current software version
-const currentVersion = 1 
-
-//db connection
+const path = require('path')
 const knex = require('knex')({
   client: 'sqlite3',
   connection: {
-    filename: "./data/database.db"
+    filename: path.resolve(__dirname, 'data', 'database.db')
   }
 })
+
+//current software version
+const appVersion = 1 
+
+//current deployment being worked on
+let currentDeployment = [],
+    currentPhase = 1,
+    currentTask = 1,
+    currentStep = 1
 
 //use jQuery
 window.$ = window.jQuery = require('jquery');
@@ -26,7 +32,11 @@ Array.prototype.forEach.call(xlinks, (link) => {
   }
 })
 
-//load html fragments
+//load html fragment
 function loadHtml(element, source){
   $(element).load(source);
 }
+
+//get id from path
+let urlParams = new URLSearchParams(window.location.search),
+    strId = urlParams.get('id')

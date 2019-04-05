@@ -1,6 +1,5 @@
 function toggleInfo() {
-  $('.info-container').hide()
-  $('.note-container').hide()
+  $('.info-container, .note-container').hide()
 
   //toggle more information when clicking the "more info" icon
   $('body').on('click', '.checklist-item__expand', function() {

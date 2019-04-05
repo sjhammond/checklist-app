@@ -33,6 +33,7 @@ function createWindow () {
 
   // and load the index.html of the app.
   win.loadFile('deployment-list.html')
+  win.openDevTools()
 
   // Emitted when the window is closed.
   win.on('closed', () => {

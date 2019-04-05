@@ -220,13 +220,14 @@ a::selection {
 	border-top: 3px solid #0099da;
 }
 
-#sidenav-top-spacer{
-	height: 72px;
-	background: #0099da;
+.icon-spacer{
+	padding: 18px 0;
 }
 
-.menu-icon-spacer{
+#back-btn{
 	padding: 18px 0;
+	height: 72px;
+	background: #0099da;
 }
 
 .sidenav a {
@@ -257,10 +258,10 @@ a::selection {
 	fill:#ced6db;
 }
 
-.menu-icon_bottom {
+#settings-icon_bottom {
 	position: fixed;
 	left: 8px;
-	bottom: 18px
+	bottom: 8px;
 }
 
 
@@ -272,7 +273,7 @@ a::selection {
 	flex-direction: column;
 	align-items: center;
 	counter-reset: task;
-	/* overflow-y: auto; */
+	overflow: auto;
 }
 
 .container::-webkit-scrollbar {
