@@ -273,7 +273,7 @@ a::selection {
 	flex-direction: column;
 	align-items: center;
 	counter-reset: task;
-	overflow: auto;
+	overflow-y: auto;
 }
 
 .container::-webkit-scrollbar {
