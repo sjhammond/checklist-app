@@ -273,7 +273,11 @@ a::selection {
 	flex-direction: column;
 	align-items: center;
 	counter-reset: task;
+<<<<<<< HEAD:rsc/css/main.css
 	overflow: auto;
+=======
+	overflow-y: auto;
+>>>>>>> 59bee1b06e3ea8e69660c27f671de0bafe9ac1f2:dist/renderer/rsc/css/main.css
 }
 
 .container::-webkit-scrollbar {
