@@ -307,14 +307,154 @@ export const Steps: Step[] = [
     id: 44,
     taskId: 9,
     title: 'Prepare for installation',
-    productTier: ProductTier.Expert,
+    productTier: ProductTier.Essential,
     infoPath: ''
   },
   {
     id: 45,
     taskId: 9,
     title: 'Download and run the Management Client software from the Management Server',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 46,
+    taskId: 10,
+    title: 'Log in with the Management Client',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 47,
+    taskId: 10,
+    title: 'Basic authentication',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 48,
+    taskId: 10,
+    title: 'Configure Management Client behavior',
+    productTier: ProductTier.Professional,
+    infoPath: ''
+  },
+  {
+    id: 49,
+    taskId: 10,
+    title: 'Configure Recording Server timeout settings',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 50,
+    taskId: 10,
+    title: 'Configure Log Server settings',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 51,
+    taskId: 10,
+    title: 'Configure email notification settings',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 52,
+    taskId: 10,
+    title: 'Verify bookmark default behavior',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 53,
+    taskId: 10,
+    title: 'Create Evidence Lock profiles',
     productTier: ProductTier.Expert,
     infoPath: ''
   },
+  {
+    id: 54,
+    taskId: 10,
+    title: 'Add Audio Messages',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  },
+  {
+    id: 55,
+    taskId: 10,
+    title: 'Configure Customer Dashboard connectivity',
+    productTier: ProductTier.Express,
+    infoPath: ''
+  },
+  {
+    id: 56,
+    taskId: 10,
+    title: 'Configure alarm and event settings',
+    productTier: ProductTier.Express,
+    infoPath: ''
+  },
+  {
+    id: 57,
+    taskId: 10,
+    title: 'Generic Event settings',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 58,
+    taskId: 11,
+    title: 'Review license information',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 59,
+    taskId: 11,
+    title: 'Activate license',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 60,
+    taskId: 11,
+    title: 'Enter and verify the site information',
+    productTier: ProductTier.Essential,
+    infoPath: ''
+  },
+  {
+    id: 61,
+    taskId: 12,
+    title: 'Define failover servers',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  },
+  {
+    id: 62,
+    taskId: 12,
+    title: 'Review and update recording server information',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  },  
+  {
+    id: 63,
+    taskId: 12,
+    title: 'Configure Recording Server storage settings',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  },
+  {
+    id: 64,
+    taskId: 12,
+    title: 'Configure archiving',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  },
+  {
+    id: 65,
+    taskId: 12,
+    title: 'Assign Failover Servers to Recording Servers',
+    productTier: ProductTier.Expert,
+    infoPath: ''
+  }
 ];

@@ -38,7 +38,7 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
                   ${ProductTier[cursor.value.productTier]}
               </td>
               <td>
-                  ${cursor.value.dateCreated}
+                  ${(cursor.value.dateCreated).toLocaleString()}
               </td>
               <td>
                   ${(cursor.value.dateModified).toLocaleString()}
