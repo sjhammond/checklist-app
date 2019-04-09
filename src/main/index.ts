@@ -36,6 +36,9 @@ const createWindow = (): void => {
       slashes: true,
   }))
 
+    //open devtools for debugging
+    win.webContents.openDevTools()
+
     // Emitted when the window is closed.
     win.on('closed', (): void => {
         // Dereference the window object, usually you would store windows
