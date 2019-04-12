@@ -22,6 +22,9 @@ dbPromise().then(async appDB => {
     if (noDeployments != null) noDeployments.style.display = 'none'; //hide 'no deployments found' message
     const body = document.getElementById('deployment-list__body');
     if (body != null) body.innerHTML = deploymentList;
+  } else {
+    const list = document.getElementById('deployment-list');
+    list.style.display = 'none';
   }
 });
 

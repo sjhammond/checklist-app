@@ -3,6 +3,7 @@ import { Phase } from './phase';
 import { Task } from './task';
 import { Step } from './step';
 import { Deployment } from './deployment';
+import { DeploymentItem } from './deployment-item';
 
 export interface MilestoneDB extends DBSchema {
   'deployments': {
@@ -31,6 +32,13 @@ export interface MilestoneDB extends DBSchema {
     value: Step,
     indexes: {
       'taskId': number
+    }
+  }
+  'deployment-items':{
+    key: number,
+    value: DeploymentItem,
+    indexes: {
+      'deploymentId': number
     }
   }
 }

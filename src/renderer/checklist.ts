@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import { dbPromise } from './data/db';
 import { Deployment } from './models/deployment';
+import { DeploymentItem } from './models/deployment-item';
 import { Phase } from './models/phase';
 import { Task } from './models/task';
 import { Step } from './models/step';
@@ -14,14 +15,6 @@ const id = urlParams.get('id');
 let deployment: Deployment;
 let phase: Phase;
 let mainContent = '';
-
-transformLinks();
-
-$("#back_icon").load("./rsc/svg/backarrow.svg");
-$("#save_icon").load("./rsc/svg/save.svg");
-$("#my-deployments_icon").load("./rsc/svg/mydeployments.svg");
-$("#add-new_icon").load("./rsc/svg/new.svg");
-$("#settings_icon").load("./rsc/svg/settings.svg");
 
 //load the db, open obj store, get the deployment, and render the list for the deployment's current phase
 dbPromise().then(async db => {
@@ -55,8 +48,14 @@ dbPromise().then(async db => {
   document.getElementById('header-title').innerHTML = phase.title;
   document.getElementById('main-content').innerHTML = mainContent;
 }).then(() => {
+  $("#back_icon").load("./rsc/svg/backarrow.svg");
+  $("#save_icon").load("./rsc/svg/save.svg");
+  $("#my-deployments_icon").load("./rsc/svg/mydeployments.svg");
+  $("#add-new_icon").load("./rsc/svg/new.svg");
+  $("#settings_icon").load("./rsc/svg/settings.svg");
   includeHTML();
   toggleInfo();
+  transformLinks();
 });
 
 //helper function that generates the task-level html for each task in the deployment phase
