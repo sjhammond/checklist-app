@@ -1,7 +1,7 @@
 import $ from 'jquery';
 import { dbPromise } from './data/db';
 import { Deployment } from './models/deployment';
-import { DeploymentItem } from './models/deployment-item';
+//import { DeploymentItem } from './models/deployment-item';
 import { Phase } from './models/phase';
 import { Task } from './models/task';
 import { Step } from './models/step';
@@ -42,17 +42,17 @@ dbPromise().then(async db => {
       .index('taskId')
       .getAll(task.id));
   }
-
   return mainContent;
 }).then(mainContent => {
   document.getElementById('header-title').innerHTML = phase.title;
   document.getElementById('main-content').innerHTML = mainContent;
 }).then(() => {
-  $("#back_icon").load("./rsc/svg/backarrow.svg");
-  $("#save_icon").load("./rsc/svg/save.svg");
-  $("#my-deployments_icon").load("./rsc/svg/mydeployments.svg");
-  $("#add-new_icon").load("./rsc/svg/new.svg");
-  $("#settings_icon").load("./rsc/svg/settings.svg");
+  $(".checklist-note__expand").load("./svg/note.svg")
+  $("#back_icon").load("./svg/backarrow.svg");
+  $("#save_icon").load("./svg/save.svg");
+  $("#my-deployments_icon").load("./svg/mydeployments.svg");
+  $("#add-new_icon").load("./svg/new.svg");
+  $("#settings_icon").load("./svg/settings.svg");
   includeHTML();
   toggleInfo();
   transformLinks();
@@ -80,10 +80,6 @@ const stepTemplate = (step: Step): string => `
             <label for='${step.id}' class='checkbox'></label>
             <span class='checklist-item__title'>${step.title}</span>
             <button class='checklist-note__expand' aria-label='Toggle Notes' title='Add Note'>
-                <svg class='svg-note-icon' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 197.99 197.99'>
-                    <path d='M33.94,96.17,0,198l101.82-33.94,77.29-77.29L111.23,18.88ZM45.42,167,31,152.57,45.8,108,90,152.19Z'/>
-                    <rect x='149.8' y='-8.16' width='16.69' height='96' transform='translate(18.15 123.5) rotate(-45)'/>
-                </svg>
             </button>
             <button class='checklist-item__expand' aria-label='Toggle Info' title='More Information'>
                 <span class='line'></span>
@@ -100,3 +96,26 @@ const stepTemplate = (step: Step): string => `
         </li>
     </ul>
 `
+const checkItem = async (step: string, state: number) => {
+  const deploymentId = parseInt(id);
+  const stepId = parseInt(step);
+    dbPromise().then(async db => {
+      const tx = db.transaction(['deployment-items'], 'readwrite');
+      const store = tx.objectStore('deployment-items');
+      const cursor = await store.openCursor();
+        if (cursor){
+          if (cursor.value.deploymentId == deploymentId && cursor.value.stepId == stepId){
+            //update the item
+            const item = cursor.value;
+            item.itemState = state;
+            cursor.update(item);
+          }
+        cursor.continue();
+        } else {
+         //do stuff
+         console.log(`step ${step} for ${deployment} set to status ${status}`)
+        }
+    })
+}
+
+checkItem("1", 1);

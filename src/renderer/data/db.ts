@@ -20,6 +20,15 @@ export const dbPromise = async () => openDB<MilestoneDB>('appDB', 1, {
       })
     }
 
+    if(objectStoreNames.every(x => x !== 'deployment-items')) {
+      appDB.createObjectStore('deployment-items', {
+        keyPath: 'id',
+        autoIncrement: true
+      }).createIndex('deploymentId', 'deploymentId', {
+        unique: false
+      })
+    }
+
     if (objectStoreNames.every(x => x !== 'phases')) {
       appDB.createObjectStore('phases', {
         keyPath: 'id',
@@ -70,6 +79,5 @@ export const dbPromise = async () => openDB<MilestoneDB>('appDB', 1, {
 
   return appDB;
 }).then(async appDB => {
-  console.log(`${appDB.name} version ${appDB.version} open.`);
   return appDB;
 });

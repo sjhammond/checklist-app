@@ -46,6 +46,15 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
               <td>
                   ${(cursor.value.dateModified).toLocaleString()}
               </td>
+              <td>
+                <button type="submit">Go</button>
+              </td>
+              <td>
+                <button type="submit">Edit</button>
+              </td>
+              <td>
+                <button type="submit">Delete</button>
+              </td>
           </tr>
       `
 };

@@ -12,7 +12,7 @@ const checkboxValues = JSON.parse(localStorage.getItem(deployment)) || {},
 	counter = document.querySelector(".header-progress-count"),
 	reset = document.querySelector(".header-reset-btn")
 
-//update the 'checkboxVlaues' localStorage item 
+//update the 'checkboxValues' localStorage item 
 function updateStorage(a) {
 	(checkboxValues[a.id] = a.checked),
 		localStorage.setItem(deployment, JSON.stringify(checkboxValues));

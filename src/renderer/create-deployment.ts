@@ -3,11 +3,11 @@ import { dbPromise } from './data/db';
 import { Deployment } from './models/deployment';
 import { ProductTier } from './models/product-tier';
 
-$("#essential-icon").load("./rsc/svg/essential.svg");
-$("#express-icon").load("./rsc/svg/express.svg");
-$("#professional-icon").load("./rsc/svg/professional.svg");
-$("#expert-icon").load("./rsc/svg/expert.svg");
-$("#corporate-icon").load("./rsc/svg/corporate.svg");
+$("#essential-icon").load("./svg/essential.svg");
+$("#express-icon").load("./svg/express.svg");
+$("#professional-icon").load("./svg/professional.svg");
+$("#expert-icon").load("./svg/expert.svg");
+$("#corporate-icon").load("./svg/corporate.svg");
 
 const createNewDeployment = async (product: string, name: string, integrator: string) => {
   //create deployment template from params
@@ -28,9 +28,9 @@ const createNewDeployment = async (product: string, name: string, integrator: st
     const tx = db.transaction(['deployments'], 'readwrite');
     const store = tx.objectStore('deployments');
     await store.add(deployment);
-    const cursor = await store.openCursor();
+    const cursor = await store.openCursor(undefined, "prev");
+    cursor.continue();
     const id = cursor.value.id;
-    await tx.done;
     return id;
   }).then(id => {
     // then go to the checklist and pass the id through the url
