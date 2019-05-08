@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "npm-run-all build run-electron",
-    "build": "webpack --watch",
+    "build": "webpack",
     "run-electron": "electron ."
   },
   "keywords": [],
