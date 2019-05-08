@@ -60,8 +60,8 @@ module.exports = [
     plugins: [ElectronReloadWebpackPlugin()],
     entry: {
       'deployment-list': './src/renderer/deployment-list.ts',
-      'checklist': './src/renderer/checklist',
-      'create-deployment': './src/renderer/create-deployment'
+      'checklist': './src/renderer/checklist.ts',
+      'create-deployment': './src/renderer/create-deployment.ts'
     },
     output: {
       filename: '[name].js',

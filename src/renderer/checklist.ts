@@ -11,7 +11,6 @@ import { transformLinks } from './helpers/external-urls';
 
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
-
 let deployment: Deployment;
 let phase: Phase;
 let mainContent = '';
@@ -99,7 +98,7 @@ const stepTemplate = (step: Step): string => `
 const checkItem = async (step: string, state: number) => {
   const deploymentId = parseInt(id);
   const stepId = parseInt(step);
-    dbPromise().then(async db => {
+  dbPromise().then(async db => {
       const tx = db.transaction(['deployment-items'], 'readwrite');
       const store = tx.objectStore('deployment-items');
       const cursor = await store.openCursor();

@@ -54,6 +54,26 @@ a::selection {
 	color: #ffe700;
 }
 
+/* DEPLOYMENT TABLE */
+
+#deployment-list__body tr { 
+	border: none;
+	cursor: pointer;
+}
+
+
+#deployment-list__body tr:nth-child(odd) { 
+	background-color : #ffffff; 
+}
+
+#deployment-list__body tr:nth-child(even) { 
+	background-color : #f6f8f9; 
+}
+
+#deployment-list__body tr:hover { 
+	background-color : #ccebf8; 
+}
+
 /* HEADER */ 
 
 .header{
