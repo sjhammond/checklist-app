@@ -22,7 +22,7 @@ dbPromise().then(async db => {
     if (noDeployments != null) noDeployments.style.display = 'none'; //hide 'no deployments found' message
     const body = document.getElementById('deployment-list__body');
     if (body != null) body.innerHTML = deploymentList;
-    addButtonEvents();
+    addClickEvents();
   } else {
     const list = document.getElementById('deployment-list');
     list.style.display = 'none';
@@ -34,12 +34,12 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
     return;
   }
   deploymentList += `
-          <tr id="${cursor.value.id}">
+          <tr class="deployment-row" id="${cursor.value.id}">
               <td>
                   ${cursor.value.name}
               </td>
               <td>
-                  ${(cursor.value.productTier < 4) ? ProductTier[cursor.value.productTier] + "+" : ProductTier[cursor.value.productTier] }
+                  ${(cursor.value.productTier < 4) ? ProductTier[cursor.value.productTier] + "+" : ProductTier[cursor.value.productTier]}
               </td>
               <td>
                   ${(cursor.value.dateCreated).toLocaleString()}
@@ -48,7 +48,6 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
                   ${(cursor.value.dateModified).toLocaleString()}
               </td>
               <td>
-                <button type="button" class="go-btn">Go</button>
                 <button type="button" class="edit-btn">Edit</button>
                 <button type="button" class="delete-btn">Delete</button>
               </td>
@@ -56,23 +55,39 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
       `
 };
 
-const deleteDeployment = (id: number):any => {
+const deleteDeployment = (id: number): any => {
+  //confirm delete (maybe make this a modal)
   const c = confirm('Are you sure you want to delete this deployment?')
+  //if OK to delete, delete from idb 
   if (c == true) {
     dbPromise().then(async db => {
       const tx = db.transaction('deployments', 'readwrite');
       const store = tx.objectStore('deployments');
       await store.delete(id);
     });
+    //and remove the element from the table
     const el = document.getElementById(id.toString());
     el.remove();
+    //check if there are no more delpoyments - if there aren't display the 'no deployments' message
+    const body = document.getElementById('deployment-list__body')
+    if (body.innerHTML.trim() == '') {
+      const list = document.getElementById('deployment-list');
+      const noDeployments = document.getElementById('no-deployments');
+      list.style.display = 'none';
+      noDeployments.style.display = 'block';
+    }
+    //stop event propigation so you don't navigate to the deleted list
+    event.stopPropagation();
+  } else {
+    //if cancelled, stop event propigation so you don't navigate to the deployment checklist
+    event.stopPropagation();
   }
 }
 
-const addButtonEvents = async () => {
+const addClickEvents = async () => {
   const deleteBtn = document.getElementsByClassName('delete-btn');
   //const editBtn = document.getElementsByClassName('edit-btn');
-  const goBtn = document.getElementsByClassName('go-btn');
+  const gotoChecklist = document.getElementsByClassName('deployment-row');
 
 
   // add delete functionality to each delete button in the table 
@@ -83,9 +98,9 @@ const addButtonEvents = async () => {
   })
 
   //add the "go" event to each table row
-  Array.from(goBtn).forEach(element => {
+  Array.from(gotoChecklist).forEach(element => {
     element.addEventListener('click', function () {
-      const href = `./checklist.html?id=${element.parentElement.parentElement.id}`
+      const href = `./checklist.html?id=${element.id}`
       window.location.href = href;
     })
   })
