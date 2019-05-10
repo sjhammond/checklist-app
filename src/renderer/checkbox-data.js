@@ -4,7 +4,6 @@ let checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]'))
 	counter = document.querySelector(".header-progress-count"),
 	reset = document.querySelector(".header-reset-btn")
 
-/*
 const checkboxValues = JSON.parse(localStorage.getItem(deployment)) || {},
 	checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')),
 	checkboxesLength = checkboxes.length,
@@ -65,5 +64,3 @@ window.onload = function () {
 		reset.addEventListener("click", resetCheckboxes),
 		reset.addEventListener("animationend", function () { this.classList.remove("header-reset-btn--pressed"); }, !1)
 };
-
-*/

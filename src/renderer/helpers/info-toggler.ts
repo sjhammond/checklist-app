@@ -5,13 +5,19 @@ export const toggleInfo = () => {
   $('.note-container').hide()
 
   //toggle more information when clicking the "more info" icon
-  $('body').on('click', '.checklist-item__expand', function () {
+  $('.checklist-item__expand').on('click', function () {
     $(this).parent().find('.info-container').slideToggle('fast');
     $(this).find('.line').toggleClass('closed');
   });
 
+  //also toggle more info when clicking the step title
+  $('.checklist-item__title').on('click', function () {
+    $(this).parent().find('.info-container').slideToggle('fast');
+    $(this).parent().find('.line').toggleClass('closed');
+  });
+
   //toggle notes section when clicking the "note" icon
-  $('body').on('click', '.checklist-note__expand', function () {
+  $('.checklist-note__expand').on('click', function () {
     $(this).parent().find('.note-container').slideToggle('fast');
     $(this).find('.svg-note-icon').toggleClass('closed');
   });

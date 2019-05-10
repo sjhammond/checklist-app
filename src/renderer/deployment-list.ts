@@ -56,8 +56,9 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
 };
 
 const deleteDeployment = (id: number): any => {
-  //confirm delete (maybe make this a modal)
+  //confirm delete (maybe make this a modal?)
   const c = confirm('Are you sure you want to delete this deployment?')
+  
   //if OK to delete, delete from idb 
   if (c == true) {
     dbPromise().then(async db => {
@@ -65,9 +66,11 @@ const deleteDeployment = (id: number): any => {
       const store = tx.objectStore('deployments');
       await store.delete(id);
     });
+   
     //and remove the element from the table
     const el = document.getElementById(id.toString());
     el.remove();
+   
     //check if there are no more delpoyments - if there aren't display the 'no deployments' message
     const body = document.getElementById('deployment-list__body')
     if (body.innerHTML.trim() == '') {
@@ -76,10 +79,12 @@ const deleteDeployment = (id: number): any => {
       list.style.display = 'none';
       noDeployments.style.display = 'block';
     }
+    
     //stop event propigation so you don't navigate to the deleted list
     event.stopPropagation();
-  } else {
+  
     //if cancelled, stop event propigation so you don't navigate to the deployment checklist
+  } else {
     event.stopPropagation();
   }
 }
@@ -89,20 +94,19 @@ const addClickEvents = async () => {
   //const editBtn = document.getElementsByClassName('edit-btn');
   const gotoChecklist = document.getElementsByClassName('deployment-row');
 
-
-  // add delete functionality to each delete button in the table 
+  //add delete functionality to each delete button in the table 
   Array.from(deleteBtn).forEach(element => {
     element.addEventListener('click', function () {
       deleteDeployment(parseInt(element.parentElement.parentElement.id));
     })
-  })
+  });
 
-  //add the "go" event to each table row
+  //add the "go to Checklist" click event to each table row
   Array.from(gotoChecklist).forEach(element => {
     element.addEventListener('click', function () {
       const href = `./checklist.html?id=${element.id}`
       window.location.href = href;
     })
-  })
+  });
 
 }

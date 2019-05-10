@@ -21,7 +21,7 @@ const createNewDeployment = async (product: string, name: string, integrator: st
     integrator: integrator,
     productTier: ProductTier[productTier as keyof typeof ProductTier]
   };
-  
+
   // get the db
   dbPromise().then(async db => {
     // create a transaction, open obj store, add deployment, and return an open cursor
@@ -44,8 +44,9 @@ document.getElementById('newDeploymentBtn').onclick = () => {
   const product = document.querySelector('input[name="radio"]:checked') as HTMLInputElement;
   const name = document.getElementById('deploymentName') as HTMLInputElement;
   const integrator = document.getElementById('integratorName') as HTMLInputElement;
-  if (product == null || name.value == null || integrator.value == null) {
-    return;
+  
+  if (product != null && name.checkValidity() && integrator.checkValidity()) {
+    createNewDeployment(product.value, name.value, integrator.value);
   }
-  createNewDeployment(product.value, name.value, integrator.value);
+  return;
 }

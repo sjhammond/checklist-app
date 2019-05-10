@@ -78,10 +78,12 @@ const stepTemplate = (step: Step): string => `
             <input id='${step.id}' type='checkbox'/>
             <label for='${step.id}' class='checkbox'></label>
             <span class='checklist-item__title'>${step.title}</span>
-            <button class='checklist-note__expand' aria-label='Toggle Notes' title='Add Note'>
-            </button>
             <button class='checklist-item__expand' aria-label='Toggle Info' title='More Information'>
                 <span class='line'></span>
+            </button>
+            <button class='checklist-note__expand' aria-label='Toggle Notes' title='Add Note'>
+            </button>
+            <button class='checklist-disable' aria-label='Not Applicable' title='Mark this step Not Applicable'>
             </button>
             <div class='info-container'>
                 <div class='info' include-html='${step.infoPath}'></div>
@@ -89,32 +91,11 @@ const stepTemplate = (step: Step): string => `
             </div>
             <!--info container-->
             <div class='note-container'>
-                <input type='text' id='${step.id}_note' />
+                <input type='text' id='${step.id}__note' />
             </div>
             <!--note container-->
         </li>
     </ul>
 `
-const checkItem = async (step: string, state: number) => {
-  const deploymentId = parseInt(id);
-  const stepId = parseInt(step);
-  dbPromise().then(async db => {
-      const tx = db.transaction(['deployment-items'], 'readwrite');
-      const store = tx.objectStore('deployment-items');
-      const cursor = await store.openCursor();
-        if (cursor){
-          if (cursor.value.deploymentId == deploymentId && cursor.value.stepId == stepId){
-            //update the item
-            const item = cursor.value;
-            item.itemState = state;
-            cursor.update(item);
-          }
-        cursor.continue();
-        } else {
-         //do stuff
-         console.log(`step ${step} for ${deployment} set to status ${status}`)
-        }
-    })
-}
 
-checkItem("1", 1);
+//add click event listener to each checkbox
