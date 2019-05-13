@@ -86,7 +86,7 @@ const stepTemplate = (step: Step): string => `
             <button class='checklist-disable' aria-label='Not Applicable' title='Mark this step Not Applicable'>
             </button>
             <div class='info-container'>
-                <div class='info' include-html='${step.infoPath}'></div>
+                <div class='info' include-html='../renderer/info_content/${step.infoPath}.html'></div>
                 <!--info content-->
             </div>
             <!--info container-->

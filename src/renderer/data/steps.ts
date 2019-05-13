@@ -7,189 +7,189 @@ export const Steps: Step[] = [
     taskId: 1,
     title: "Confirm passwords and settings on existing network and server equipment",
     productTier: ProductTier.Essential,
-    infoPath: "../renderer/info_content/document.htm"
+    infoPath: "Confirm passwords and settings on existing network and server equipment"
   },
   {
     id: 2,
     taskId: 1,
     title: 'Check switches',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check switches'
   },
   {
     id: 3,
     taskId: 1,
     title: 'Determine IP Address Ranges',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Determine IP address ranges'
   },
   {
     id: 4,
     taskId: 1,
     title: 'Configure the Network',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Configure the network'
   },
   {
     id: 5,
     taskId: 1,
     title: 'Test the Network',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Test the network'
   },
   {
     id: 6,
     taskId: 1,
     title: 'Check Network Time Protocol (NTP) Server',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check Network Time Protocol (NTP) server'
   },
   {
     id: 7,
     taskId: 1,
     title: 'Check Access to Microsoft Active Directory',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check access to Microsoft Active Directory'
   },
   {
     id: 8,
     taskId: 1,
     title: 'Verify Microsoft SQL server access and permissions',
     productTier: ProductTier.Professional,
-    infoPath: ''
+    infoPath: 'Verify Microsoft SQL server access and permissions'
   },
   {
     id: 9,
     taskId: 1,
     title: 'Verify access to remote XProtect VMS systems that will be interconnected',
     productTier: ProductTier.Corporate,
-    infoPath: ''
+    infoPath: 'Verify access to remote XProtect VMS systems that will be interconnected'
   },
   {
     id: 10,
     taskId: 2,
     title: 'Set a static IP address or configure DHCP and hostname',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Set a static IP address or configure DHCP and hostname'
   },
   {
     id: 11,
     taskId: 2,
     title: 'Set administrator account credentials',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Set administrator account credentials'
   },
   {
     id: 12,
     taskId: 2,
     title: 'Verify firmware version with Milestone Supported Devices list',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Verify firmware version with Milestone Supported Devices list'
   },
   {
     id: 13,
     taskId: 2,
     title: 'Mount cameras and other IP hardware devices',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Mount cameras and other IP hardware devices'
   },
   {
     id: 14,
     taskId: 2,
     title: 'Configure additional device settings',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Configure additional device settings'
   },
   {
     id: 15,
     taskId: 2,
     title: 'Install Milestone Screen recorder',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Install Milestone Screen recorder'
   },
   {
     id: 16,
     taskId: 3,
     title: 'Install operating system environment',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Install operating system environment'
   },
   {
     id: 17,
     taskId: 3,
     title: 'Set and verify network settings',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Set and verify network settings'
   },
   {
     id: 18,
     taskId: 3,
     title: 'Check server access',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check server access'
   },
   {
     id: 19,
     taskId: 3,
     title: 'Add and verify user accounts and passwords',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Add and verify user accounts and passwords'
   },
   {
     id: 20,
     taskId: 3,
     title: 'Enable remote management, such as Windows Remote Desktop',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Enable remote management, such as Windows Remote Desktop'
   },
   {
     id: 21,
     taskId: 3,
     title: 'Check Server time',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check server time'
   },
   {
     id: 22,
     taskId: 3,
     title: 'Install all important Windows Updates',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Install all important Windows Updates'
   },
   {
     id: 23,
     taskId: 3,
     title: 'Check additional server software and settings',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Check additional server software and settings'
   },
   {
     id: 24,
     taskId: 3,
     title: 'Add anti-virus scan exceptions',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Add anti virus scan exceptions (Win Svr)'
   },
   {
     id: 25,
     taskId: 3,
     title: 'Enable SNMP traps',
     productTier: ProductTier.Corporate,
-    infoPath: ''
+    infoPath: 'Enable SNMP traps'
   },
   {
     id: 26,
     taskId: 4,
     title: 'Prepare storage system',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Prepare storage system'
   },
   {
     id: 27,
     taskId: 4,
     title: 'Verify access to remote storage',
     productTier: ProductTier.Essential,
-    infoPath: ''
+    infoPath: 'Verify access to remote storage'
   },
   {
     id: 28,
