@@ -16,7 +16,6 @@ export const includeHTML = (): void => {
           //assign it to the inlcude-html element, remove the attribute, and loop through
           elmnt.innerHTML = body;
           elmnt.removeAttribute('include-html');
-          includeHTML();
         })
     }
   }

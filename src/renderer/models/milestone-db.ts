@@ -38,7 +38,8 @@ export interface MilestoneDB extends DBSchema {
     key: number,
     value: DeploymentItem,
     indexes: {
-      'deploymentId': number
+      'deploymentId': number,
+      'stepId': number
     }
   }
 }
