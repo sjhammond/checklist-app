@@ -27,7 +27,7 @@ export const dbPromise = async () => openDB<MilestoneDB>('appDB', 1, {
         autoIncrement: true
       }); 
       deploymentStore.createIndex('stepId', 'stepId', {
-        unique: true
+        unique: false
       });
       deploymentStore.createIndex('deploymentId', 'deploymentId', {unique: false});
     }

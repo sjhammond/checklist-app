@@ -3,26 +3,32 @@ import { dbPromise } from './data/db';
 import { MilestoneDB } from './models/milestone-db';
 import { ProductTier } from './models/product-tier';
 
+//declare deploymentList for scope
 let deploymentList = '';
 
+// return a cursor opened in the deployment object store
 dbPromise().then(async db => {
-  // get the db then create a transaction, open obj store, and open cursor
   const tx = db.transaction(['deployments'], 'readonly');
   const store = tx.objectStore('deployments');
   return await store.openCursor(undefined, 'prev');
+
+// iterate through the cursor and display each item in the object store
 }).then(async cursor => {
-  // iterate through the cursor and display each item in the object store
   while (cursor) {
     buildDeployments(cursor);
     cursor = await cursor.continue();
   }
+
+//if the list has data, hide the "no deployments" message, display the list, and add click interactions
 }).then(() => {
   if (deploymentList !== '') {
     const noDeployments = document.getElementById('no-deployments');
-    if (noDeployments != null) noDeployments.style.display = 'none'; //hide 'no deployments found' message
+    if (noDeployments != null) noDeployments.style.display = 'none';
     const body = document.getElementById('deployment-list__body');
     if (body != null) body.innerHTML = deploymentList;
     addClickEvents();
+
+  //otherwise, hide the list
   } else {
     const list = document.getElementById('deployment-list');
     list.style.display = 'none';
@@ -30,9 +36,13 @@ dbPromise().then(async db => {
 });
 
 const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'[], 'deployments', unknown>) => {
+
+  //if the cursor is undefined (ie no more items found), escape
   if (!cursor) {
     return;
   }
+
+  //otherwise, build a table row for each deployment in the store
   deploymentList += `
           <tr class="deployment-row" id="${cursor.value.id}">
               <td>
@@ -56,10 +66,11 @@ const buildDeployments = (cursor: IDBPCursorWithValue<MilestoneDB, 'deployments'
 };
 
 const deleteDeployment = (id: number): any => {
-  //confirm delete (maybe make this a modal?)
+
+  //confirm delete
   const c = confirm('Are you sure you want to delete this deployment?')
   
-  //if OK to delete, delete from idb 
+  //if OK to delete, delete from indexedDB object store 
   if (c == true) {
     dbPromise().then(async db => {
       const tx = db.transaction('deployments', 'readwrite');
@@ -67,7 +78,7 @@ const deleteDeployment = (id: number): any => {
       await store.delete(id);
     });
    
-    //and remove the element from the table
+    //remove the element from the table
     const el = document.getElementById(id.toString());
     el.remove();
    
@@ -83,7 +94,7 @@ const deleteDeployment = (id: number): any => {
     //stop event propigation so you don't navigate to the deleted list
     event.stopPropagation();
   
-    //if cancelled, stop event propigation so you don't navigate to the deployment checklist
+  //if cancelled, stop event propigation so you don't navigate to the deployment checklist
   } else {
     event.stopPropagation();
   }

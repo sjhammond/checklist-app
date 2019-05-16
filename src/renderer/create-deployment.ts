@@ -3,6 +3,7 @@ import { dbPromise } from './data/db';
 import { Deployment } from './models/deployment';
 import { ProductTier } from './models/product-tier';
 
+//load svg images
 $("#essential-icon").load("./svg/essential.svg");
 $("#express-icon").load("./svg/express.svg");
 $("#professional-icon").load("./svg/professional.svg");
@@ -10,13 +11,12 @@ $("#expert-icon").load("./svg/expert.svg");
 $("#corporate-icon").load("./svg/corporate.svg");
 
 const createNewDeployment = async (product: string, name: string, integrator: string) => {
-  //declare id for scope use
+  //declare id for scope
   let id: number;
 
   //create deployment template from params
   const date = new Date();
   const productTier = ProductTier[parseInt(product)];
-
   const deployment: Deployment = {
     dateCreated: date,
     dateModified: date,
@@ -26,7 +26,9 @@ const createNewDeployment = async (product: string, name: string, integrator: st
     productTier: ProductTier[productTier as keyof typeof ProductTier]
   };
 
+  //open the indexedDB
   dbPromise().then(async db => {
+
     //add the deployment
     await db
       .transaction('deployments', 'readwrite')
@@ -50,36 +52,39 @@ const createNewDeployment = async (product: string, name: string, integrator: st
     //for each step, add a deployment item for this deployment
     for (const step of steps) {
       await db
-      .transaction('deployment-items', 'readwrite')
-      .objectStore('deployment-items')
-      .add({
-        deploymentId: id,
-        stepId: step.id,
-        itemState: 0,
-        integrator: undefined,
-        date: new Date(),
-        note: undefined,
-        noteIntegrator: undefined,
-        noteDate: undefined
-      })
+        .transaction('deployment-items', 'readwrite')
+        .objectStore('deployment-items')
+        .add({
+          deploymentId: id,
+          stepId: step.id,
+          itemState: 0,
+          integrator: undefined,
+          date: new Date(),
+          note: undefined,
+          noteIntegrator: undefined,
+          noteDate: undefined
+        })
     }
     return;
   })
+    //go to deployment checklist
     .then(() => {
-      //go to deployment checklist
       const href = `./checklist.html?id=${id}`;
       console.log(href)
       window.location.href = href;
     })
 }
 
+//prevent default form submission (but keep form validation)
+$('form').submit(e => e.preventDefault());
+
 // On click, create a new deployment using the params from the html form
-document.getElementById('newDeploymentBtn').onclick = () => {
+$('#newDeploymentBtn').on('click', () => {
   const product = document.querySelector('input[name="radio"]:checked') as HTMLInputElement;
   const name = document.getElementById('deploymentName') as HTMLInputElement;
   const integrator = document.getElementById('integratorName') as HTMLInputElement;
   if (product != null && name.checkValidity() && integrator.checkValidity()) {
     createNewDeployment(product.value, name.value, integrator.value);
   }
-  return;
-}
+});
+
