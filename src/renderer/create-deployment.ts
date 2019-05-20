@@ -1,7 +1,5 @@
 import $ from 'jquery';
-import { dbPromise } from './data/db';
-import { Deployment } from './models/deployment';
-import { ProductTier } from './models/product-tier';
+import { createNewDeployment } from './helpers/createNewDeployment';
 
 //load svg images
 $("#essential-icon").load("./svg/essential.svg");
@@ -10,75 +8,10 @@ $("#professional-icon").load("./svg/professional.svg");
 $("#expert-icon").load("./svg/expert.svg");
 $("#corporate-icon").load("./svg/corporate.svg");
 
-const createNewDeployment = async (product: string, name: string, integrator: string) => {
-  //declare id for scope
-  let id: number;
-
-  //create deployment template from params
-  const date = new Date();
-  const productTier = ProductTier[parseInt(product)];
-  const deployment: Deployment = {
-    dateCreated: date,
-    dateModified: date,
-    name: name,
-    currentPhaseId: 1,
-    integrator: integrator,
-    productTier: ProductTier[productTier as keyof typeof ProductTier]
-  };
-
-  //open the indexedDB
-  dbPromise().then(async db => {
-
-    //add the deployment
-    await db
-      .transaction('deployments', 'readwrite')
-      .objectStore('deployments')
-      .add(deployment)
-
-    //retrieve the latest deployment id using cursor
-    const deploymentCursor = await db
-      .transaction('deployments', 'readonly')
-      .objectStore('deployments')
-      .openCursor(undefined, "prev")
-    deploymentCursor.continue();
-    id = deploymentCursor.value.id;
-
-    //get all the steps from the step table
-    const steps = await db
-      .transaction('steps', 'readonly')
-      .objectStore('steps')
-      .getAll();
-
-    //for each step, add a deployment item for this deployment
-    for (const step of steps) {
-      await db
-        .transaction('deployment-items', 'readwrite')
-        .objectStore('deployment-items')
-        .add({
-          deploymentId: id,
-          stepId: step.id,
-          itemState: 0,
-          integrator: undefined,
-          date: new Date(),
-          note: undefined,
-          noteIntegrator: undefined,
-          noteDate: undefined
-        })
-    }
-    return;
-  })
-    //go to deployment checklist
-    .then(() => {
-      const href = `./checklist.html?id=${id}`;
-      console.log(href)
-      window.location.href = href;
-    })
-}
-
-//prevent default form submission (but keep form validation)
+//prevent default form submission (but keep form validation!)
 $('form').submit(e => e.preventDefault());
 
-// On click, create a new deployment using the params from the html form
+// on click, create a new deployment using the params from the html form
 $('#newDeploymentBtn').on('click', () => {
   const product = document.querySelector('input[name="radio"]:checked') as HTMLInputElement;
   const name = document.getElementById('deploymentName') as HTMLInputElement;
@@ -87,4 +20,3 @@ $('#newDeploymentBtn').on('click', () => {
     createNewDeployment(product.value, name.value, integrator.value);
   }
 });
-
