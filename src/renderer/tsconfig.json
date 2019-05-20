@@ -16,6 +16,7 @@
         "strictPropertyInitialization": false,
         "strictNullChecks": false,
         "allowJs": true,
+        "noImplicitAny": false,
         "jsx": "preserve"
     },
     "exclude": [

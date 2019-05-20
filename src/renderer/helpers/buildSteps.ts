@@ -24,7 +24,7 @@ export const buildSteps = (step: Step, items: DeploymentItem[]): string => {
       <ul class='checklist-container'>
           <li class='checklist-item'>
               ${checkboxWithState}
-              <label for='${step.id}' class='checkbox'></label>
+              <label for='${step.id}__checkbox' class='checkbox'></label>
               <span class='checklist-item__title'>${step.title}</span>
               <button class='checklist-item__expand' aria-label='Toggle Info' title='Show more information'>
                   <span class='line'></span>
@@ -49,3 +49,5 @@ export const buildSteps = (step: Step, items: DeploymentItem[]): string => {
       </ul>
     `
 }
+
+//              

@@ -7,17 +7,21 @@ import { transformLinks } from './helpers/external-urls';
 import { buildTasks } from './helpers/buildTasks';
 import { Deployment } from './models/deployment';
 import { checkboxEvents } from './helpers/checkboxEvents';
+import { IDBPDatabase } from 'idb';
+import { MilestoneDB } from './models/milestone-db';
 
 //declare global vars
 export let deployment: Deployment;
 let phase: Phase;
 let mainContent = '';
+let dbContext: IDBPDatabase<MilestoneDB>;
 
 //get the deployment id from the URL querystring
 const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
 dbPromise().then(async db => {
+  db = dbContext; 
   //get the current deployment
   deployment = await db
     .transaction('deployments', 'readonly')
@@ -69,7 +73,7 @@ dbPromise().then(async db => {
 
 }).then(() => {
   //load helper functions
-  checkboxEvents();
+  checkboxEvents(dbContext);
   includeHTML();
   toggleInfo();
   transformLinks();
