@@ -21,7 +21,7 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get('id');
 
 dbPromise().then(async db => {
-  db = dbContext; 
+  dbContext = db; 
   //get the current deployment
   deployment = await db
     .transaction('deployments', 'readonly')
@@ -41,7 +41,7 @@ dbPromise().then(async db => {
     .index('phaseId')
     .getAll(phase.id);
 
-  //get all the deployment items for this deployment
+  //get the deployment item for this deployment
   const items = await db
     .transaction('deployment-items', 'readonly')
     .objectStore('deployment-items')
@@ -73,7 +73,7 @@ dbPromise().then(async db => {
 
 }).then(() => {
   //load helper functions
-  checkboxEvents(dbContext);
+  checkboxEvents(id, dbContext);
   includeHTML();
   toggleInfo();
   transformLinks();
