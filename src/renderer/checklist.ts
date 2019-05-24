@@ -1,14 +1,16 @@
 import $ from 'jquery';
 import { dbPromise } from './data/db';
 import { Phase } from './models/phase';
-import { includeHTML } from './helpers/include-html';
-import { toggleInfo } from './helpers/info-toggler';
-import { transformLinks } from './helpers/external-urls';
+import { includeHTML } from './helpers/includeHtml';
+import { toggleInfo } from './helpers/toggleInfo';
+import { transformLinks } from './helpers/transformLinks';
 import { buildTasks } from './helpers/buildTasks';
 import { Deployment } from './models/deployment';
 import { checkboxEvents } from './helpers/checkboxEvents';
 import { IDBPDatabase } from 'idb';
 import { MilestoneDB } from './models/milestone-db';
+import { noteEvents } from './helpers/noteEvents';
+import { disableStepEvents } from './helpers/disableStepEvents';
 
 //declare global vars
 export let deployment: Deployment;
@@ -72,8 +74,11 @@ dbPromise().then(async db => {
   document.getElementById('main-content').innerHTML = mainContent;
 
 }).then(() => {
+  
   //load helper functions
   checkboxEvents(id, dbContext);
+  noteEvents(id, dbContext);
+  disableStepEvents(id, dbContext);
   includeHTML();
   toggleInfo();
   transformLinks();
@@ -85,5 +90,6 @@ dbPromise().then(async db => {
   $("#my-deployments_icon").load("./svg/mydeployments.svg");
   $("#add-new_icon").load("./svg/new.svg");
   $("#settings_icon").load("./svg/settings.svg");
+  $(".disable-step").load("./svg/disable.svg");
 
 });

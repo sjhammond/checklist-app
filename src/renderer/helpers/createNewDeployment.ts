@@ -25,13 +25,13 @@ export const createNewDeployment = async (product: string, name: string, integra
         await db
             .transaction('deployments', 'readwrite')
             .objectStore('deployments')
-            .add(deployment)
+            .add(deployment);
 
         //retrieve the latest deployment id using cursor
         const deploymentCursor = await db
             .transaction('deployments', 'readonly')
             .objectStore('deployments')
-            .openCursor(undefined, "prev")
+            .openCursor(undefined, "prev");
         deploymentCursor.continue();
         id = deploymentCursor.value.id;
 
@@ -55,7 +55,7 @@ export const createNewDeployment = async (product: string, name: string, integra
                     note: undefined,
                     noteIntegrator: undefined,
                     noteDate: undefined
-                })
+                });
         }
         return;
     })
@@ -64,5 +64,5 @@ export const createNewDeployment = async (product: string, name: string, integra
             const href = `./checklist.html?id=${id}`;
             console.log(href)
             window.location.href = href;
-        })
+        });
 }

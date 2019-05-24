@@ -1,6 +1,6 @@
 import { deleteDeployment } from "./deleteDeployment";
 
-export const addDeploymentListClickEvents = async () => {
+export const deploymentListEvents = async () => {
     const deleteBtn = document.getElementsByClassName('delete-btn');
     //const editBtn = document.getElementsByClassName('edit-btn');
     const gotoChecklist = document.getElementsByClassName('deployment-row');
@@ -17,7 +17,6 @@ export const addDeploymentListClickEvents = async () => {
       element.addEventListener('click', function () {
         const href = `./checklist.html?id=${element.id}`
         window.location.href = href;
-      })
+      });
     });
-  
   }
