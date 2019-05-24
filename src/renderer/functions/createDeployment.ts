@@ -2,7 +2,7 @@ import { ProductTier } from "../models/product-tier";
 import { Deployment } from "../models/deployment";
 import { dbPromise } from "../data/db";
 
-export const createNewDeployment = async (product: string, name: string, integrator: string) => {
+export const createDeployment = async (product: string, name: string, integrator: string) => {
     //declare id for function-level scope
     let id: number;
 
@@ -32,6 +32,7 @@ export const createNewDeployment = async (product: string, name: string, integra
             .transaction('deployments', 'readonly')
             .objectStore('deployments')
             .openCursor(undefined, "prev");
+        
         deploymentCursor.continue();
         id = deploymentCursor.value.id;
 

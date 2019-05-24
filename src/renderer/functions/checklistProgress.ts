@@ -1,3 +1,11 @@
+
+
+export const progressListener = () => {
+
+}
+
+
+/*
 let checkboxes = Array.from(document.querySelectorAll('input[type="checkbox"]')),
 	checkboxesLength = checkboxes.length,
 	progress = document.querySelector(".header-progress-bar"),
@@ -64,3 +72,4 @@ window.onload = function () {
 		reset.addEventListener("click", resetCheckboxes),
 		reset.addEventListener("animationend", function () { this.classList.remove("header-reset-btn--pressed"); }, !1)
 };
+*/

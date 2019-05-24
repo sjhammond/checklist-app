@@ -1,6 +1,6 @@
 import { deleteDeployment } from "./deleteDeployment";
 
-export const deploymentListEvents = async () => {
+export const deploymentListEventListeners = async () => {
     const deleteBtn = document.getElementsByClassName('delete-btn');
     //const editBtn = document.getElementsByClassName('edit-btn');
     const gotoChecklist = document.getElementsByClassName('deployment-row');

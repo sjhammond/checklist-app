@@ -1,5 +1,5 @@
 import $ from 'jquery';
-import { createNewDeployment } from './helpers/createNewDeployment';
+import { createDeployment } from './functions/createDeployment';
 
 //load svg images
 $("#essential-icon").load("./svg/essential.svg");
@@ -17,6 +17,6 @@ $('#newDeploymentBtn').on('click', () => {
   const name = document.getElementById('deploymentName') as HTMLInputElement;
   const integrator = document.getElementById('integratorName') as HTMLInputElement;
   if (product != null && name.checkValidity() && integrator.checkValidity()) {
-    createNewDeployment(product.value, name.value, integrator.value);
+    createDeployment(product.value, name.value, integrator.value);
   }
 });

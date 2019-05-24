@@ -613,7 +613,8 @@ html [type="button"] {
 
 .Heading1,
 .Heading2,
-.Heading3 {
+.Heading3,
+.Seealso {
 	display: none;
 }
 

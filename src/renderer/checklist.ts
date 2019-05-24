@@ -1,16 +1,15 @@
 import $ from 'jquery';
 import { dbPromise } from './data/db';
 import { Phase } from './models/phase';
-import { includeHTML } from './helpers/includeHtml';
-import { toggleInfo } from './helpers/toggleInfo';
-import { transformLinks } from './helpers/transformLinks';
-import { buildTasks } from './helpers/buildTasks';
+import { includeHTML } from './functions/includeHtml';
+import { toggleInfo } from './functions/toggleInfo';
+import { transformLinks } from './functions/transformLinks';
 import { Deployment } from './models/deployment';
-import { checkboxEvents } from './helpers/checkboxEvents';
 import { IDBPDatabase } from 'idb';
 import { MilestoneDB } from './models/milestone-db';
-import { noteEvents } from './helpers/noteEvents';
-import { disableStepEvents } from './helpers/disableStepEvents';
+import { buildTasks } from './functions/buildChecklist';
+import { addNoteListener, completeStepListener, disableStepListener } from './functions/checklistEventListeners';
+import { getDeployment, getItemsByDeploymentId } from './functions/dbFunctions';
 
 //declare global vars
 export let deployment: Deployment;
@@ -24,11 +23,9 @@ const id = urlParams.get('id');
 
 dbPromise().then(async db => {
   dbContext = db; 
+
   //get the current deployment
-  deployment = await db
-    .transaction('deployments', 'readonly')
-    .objectStore('deployments')
-    .get(parseInt(id));
+  deployment = await getDeployment(id, db);
 
   //get the current phase for this deployment
   phase = await db
@@ -43,12 +40,8 @@ dbPromise().then(async db => {
     .index('phaseId')
     .getAll(phase.id);
 
-  //get the deployment item for this deployment
-  const items = await db
-    .transaction('deployment-items', 'readonly')
-    .objectStore('deployment-items')
-    .index('deploymentId')
-    .getAll(deployment.id)
+  //get the deployment items for this deployment
+  const items = await getItemsByDeploymentId(id, db);
 
   //for each task
   for (const task of tasks
@@ -75,10 +68,12 @@ dbPromise().then(async db => {
 
 }).then(() => {
   
+  //load event listeners
+  completeStepListener(id, dbContext);
+  addNoteListener(id, dbContext);
+  disableStepListener(id, dbContext);
+
   //load helper functions
-  checkboxEvents(id, dbContext);
-  noteEvents(id, dbContext);
-  disableStepEvents(id, dbContext);
   includeHTML();
   toggleInfo();
   transformLinks();

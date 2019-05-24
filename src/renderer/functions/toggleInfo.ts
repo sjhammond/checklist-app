@@ -6,19 +6,19 @@ export const toggleInfo = () => {
 
   //toggle more information when clicking the "more info" icon
   $('.checklist-item__expand').on('click', function () {
-    $(this).parent().find('.info-container').slideToggle('fast');
+    $(this).parent().find('.info-container').slideToggle('slow');
     $(this).find('.line').toggleClass('closed');
   });
 
   //also toggle more info when clicking the step title
   $('.checklist-item__title').on('click', function () {
-    $(this).parent().find('.info-container').slideToggle('fast');
+    $(this).parent().find('.info-container').slideToggle('slow');
     $(this).parent().find('.line').toggleClass('closed');
   });
 
   //toggle notes section when clicking the "note" icon
   $('.checklist-note__expand').on('click', function () {
-    $(this).parent().find('.note-container').slideToggle('fast');
+    $(this).parent().find('.note-container').slideToggle('slow');
     $(this).find('.svg-note-icon').toggleClass('closed');
   });
 
