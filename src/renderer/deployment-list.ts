@@ -1,6 +1,6 @@
 import { dbPromise } from './data/db';
 import { buildDeploymentList, deploymentList } from './helpers/buildDeploymentList';
-import { addDeploymentListClickEvents } from './helpers/addDeploymentListClickEvents';
+import { deploymentListEvents } from './helpers/deploymentListEvents';
 
 // return a cursor opened in the deployment object store
 dbPromise().then(async db => {
@@ -22,7 +22,7 @@ dbPromise().then(async db => {
     if (noDeployments != null) noDeployments.style.display = 'none';
     const body = document.getElementById('deployment-list__body');
     if (body != null) body.innerHTML = deploymentList;
-    addDeploymentListClickEvents();
+    deploymentListEvents();
 
   } else {
     //otherwise, hide the list
