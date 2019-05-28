@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+import $ from 'jquery';
+import { createDeployment } from './newDeploymentEvents';
+import { renderMainMenu } from './menuBuilder';
 
-<head>
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <script defer src="./create-deployment.js"></script>
-</head>
+export const renderCreateDeployment = () => {
 
-<body>
-    <div class="container">
+    const main = document.getElementById('main-content')
+    main.innerHTML = `
         <form id="new-deployment__form">
             <h1 id="header-title">New Deployment</h1>
             <span>Select your XProtect product:</span>
@@ -59,6 +58,27 @@
             <input id="integratorName" type="text" required minlength="2" maxlength="96" />
             <button id="newDeploymentBtn" class="primary-btn" type="submit">Create Checklist</button>
         </form>
-    </div>
-    <!--container-->
-</body>
+    `
+
+    renderMainMenu();
+    
+    //load svg images
+    $("#essential-icon").load("./svg/essential.svg");
+    $("#express-icon").load("./svg/express.svg");
+    $("#professional-icon").load("./svg/professional.svg");
+    $("#expert-icon").load("./svg/expert.svg");
+    $("#corporate-icon").load("./svg/corporate.svg");
+
+    //prevent default form submission (but keep form validation!)
+    $('form').submit(e => e.preventDefault());
+
+    // on click, create a new deployment using the params from the html form
+    $('#newDeploymentBtn').on('click', () => {
+        const product = document.querySelector('input[name="radio"]:checked') as HTMLInputElement;
+        const name = document.getElementById('deploymentName') as HTMLInputElement;
+        const integrator = document.getElementById('integratorName') as HTMLInputElement;
+        if (product != null && name.checkValidity() && integrator.checkValidity()) {
+            createDeployment(product.value, name.value, integrator.value);
+        }
+    })
+}

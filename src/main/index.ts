@@ -30,7 +30,7 @@ const createWindow = (): void => {
 
     // and load the index.html of the app.
     win.loadURL(url.format({
-      pathname: path.join(process.cwd(), 'dist/renderer/deployment-list.html'),
+      pathname: path.join(process.cwd(), 'dist/renderer/app.html'),
       protocol: 'file:',
       slashes: true,
   }))

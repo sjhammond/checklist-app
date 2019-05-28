@@ -1,7 +1,7 @@
 import { IDBPDatabase } from "idb";
-import { MilestoneDB } from "../models/milestone-db";
-import { DeploymentItem } from "../models/deployment-item";
-import { Deployment } from "../models/deployment";
+import { MilestoneDB } from "../../models/milestone-db";
+import { DeploymentItem } from "../../models/deployment-item";
+import { Deployment } from "../../models/deployment";
 
 export const getDeployment = (id:string, db:IDBPDatabase<MilestoneDB>) => {
     return db    

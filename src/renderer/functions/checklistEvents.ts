@@ -2,10 +2,10 @@ import $ from 'jquery';
 import { IDBPDatabase } from 'idb';
 import { MilestoneDB } from '../models/milestone-db';
 import { ItemState } from '../models/item-state';
-import { buildStatus, buildNoteStatus } from './buildChecklist';
-import { getDeployment, getItemsByDeploymentId, updateDeploymentItem, updateDeploymentModifiedDate } from './dbFunctions';
+import { buildStatus, buildNoteStatus } from './checklistBuilder';
+import { getDeployment, getItemsByDeploymentId, updateDeploymentItem, updateDeploymentModifiedDate } from './helpers/dbFunctions';
 
-export const completeStepListener = async (id:string, db: IDBPDatabase<MilestoneDB>) => {
+export const addCompleteStepEvents = async (id:string, db: IDBPDatabase<MilestoneDB>) => {
     $('input[id$="__checkbox"]').click(async function (e) {
         
         //get event targets
@@ -55,7 +55,7 @@ export const completeStepListener = async (id:string, db: IDBPDatabase<Milestone
     });
 }
 
-export const disableStepListener = async (id: string, db: IDBPDatabase<MilestoneDB>) => {
+export const addDisableStepEvents = async (id: string, db: IDBPDatabase<MilestoneDB>) => {
     $('.disable-step').click(async function (e) {
 
         //get event targets
@@ -112,7 +112,7 @@ export const disableStepListener = async (id: string, db: IDBPDatabase<Milestone
 }
 
 
-export const addNoteListener = async (id:string, db: IDBPDatabase<MilestoneDB>) => {
+export const addNoteEvents = async (id:string, db: IDBPDatabase<MilestoneDB>) => {
     $('button[id$="__save-note"]').click(async function (e) {
         
         //get stepId from event target

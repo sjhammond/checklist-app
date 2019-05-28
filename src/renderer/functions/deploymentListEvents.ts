@@ -1,3 +1,4 @@
+import { renderDeploymentList } from "./deploymentListBuilder";
 import { dbPromise } from "../data/db";
 
 export const deleteDeployment = (id: number): any => {
@@ -23,32 +24,23 @@ export const deleteDeployment = (id: number): any => {
           .getAllKeys(id);
   
         //delete each item for the deployment from deployment-items db store
-        for (const item of items){
+        for (const item of items) {
           await db
-          .transaction('deployment-items', 'readwrite')
-          .objectStore('deployment-items')
-          .delete(item);
+            .transaction('deployment-items', 'readwrite')
+            .objectStore('deployment-items')
+            .delete(item);
         }
       });
   
       //remove the element from the table
-      const el = document.getElementById(id.toString());
+      const el = document.getElementById('deployment' + id.toString());
       el.remove();
   
       //check if there are no more delpoyments - if there aren't display the 'no deployments' message
-      const body = document.getElementById('deployment-list__body')
-      if (body.innerHTML.trim() == '') {
-        const list = document.getElementById('deployment-list');
-        const noDeployments = document.getElementById('no-deployments');
-        list.style.display = 'none';
-        noDeployments.style.display = 'block';
+      const deploymentListLength = document.getElementsByClassName('deployment');
+      if (deploymentListLength.length === 0) {
+        renderDeploymentList();
       }
-  
-      //stop event propigation so you don't navigate to the deleted list
-      event.stopPropagation();
-  
-      //if cancelled, stop event propigation so you don't navigate to the deployment checklist
-    } else {
       event.stopPropagation();
     }
   }

@@ -47,9 +47,7 @@ module.exports = [
   Object.assign({}, common_config, {
     target: 'electron-renderer',
     entry: {
-      'deployment-list': './src/renderer/deployment-list.ts',
-      'checklist': './src/renderer/checklist.ts',
-      'create-deployment': './src/renderer/create-deployment.ts'
+      'app': './src/renderer/app.ts',
     },
     output: {
       filename: '[name].js',

@@ -61,7 +61,6 @@ a::selection {
 	cursor: pointer;
 }
 
-
 #deployment-list__body tr:nth-child(odd) { 
 	background-color : #ffffff; 
 }
@@ -131,32 +130,6 @@ a::selection {
 	letter-spacing: 0.05em;
 }
 
-.header-reset-btn {
-	font-family: inherit;
-	line-height: 32px;
-	height: 32px;
-	margin-left: 0.75em;
-	padding: 0 8px;
-	cursor: pointer;
-	-webkit-transition: all 0.3s ease;
-	transition: all 0.3s ease;
-	letter-spacing: 0.025em;
-	color: #ffffff;
-	border: 1px solid #0099da;
-	outline: 0;
-	background: #0099da;
-}
-
-.header-reset-btn:focus,
-.header-reset-btn:hover {
-	background: #0091cf;
-}
-
-.header-reset-btn--pressed {
-	-webkit-animation: wiggle 350ms ease alternate;
-	animation: wiggle 350ms ease alternate;
-}
-
 /* RADIO TILES */
 
 .radio-tile-group {
@@ -164,97 +137,88 @@ a::selection {
 	flex-wrap: nowrap;
 	justify-content: center;
 }
-	.input-container {
-	  display: flex;
-	  position: relative;
-	  height:  10rem;
-	  width:  10rem;
-	  margin: 0.5rem;
-	}
 
-	  .radio-button {
-		opacity: 0;
-		position: absolute;
-		top: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		margin: 0;
-		cursor: pointer;
-	  }
+.input-container {
+	display: flex;
+	position: relative;
+	height:  10rem;
+	width:  10rem;
+	margin: 0.5rem;
+}
 
-	  .radio-tile {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-		padding: 1rem;
-		transition: transform 300ms ease;
-	  }
+.radio-button {
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	cursor: pointer;
+}
 
-	  .icon {
-		  width: 5em;
-		  height: 5em;
-	  }
+.radio-tile {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	transition: transform 300ms ease;
+}
 
-	  .icon svg {
-		fill: #0099da;
-	  }
+.icon {
+	width: 5em;
+	height: 5em;
+}
 
-	  .radio-tile-label {
-		text-align: center;
-		font-size: 0.75rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		letter-spacing: 1px;
-		color: #0099da;
-	  }
+.icon svg {
+	fill: #0099da;
+}
 
-	  .radio-button:checked ~ .radio-tile {
-		background-color: #0099da;
-		border: 2px solid #0099da;
-		color: white;
-		transform: scale(1.1, 1.1);
-	}
-		.radio-button:checked ~ .radio-tile .icon svg {
-		  fill: white;
-		}
-		.radio-button:checked ~ .radio-tile .radio-tile-label {
-		  color: white;
-		}
+.radio-tile-label {
+	text-align: center;
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #0099da;
+}
+
+.radio-button:checked ~ .radio-tile {
+	background-color: #0099da;
+	border: 2px solid #0099da;
+	color: white;
+	transform: scale(1.1, 1.1);
+}
+
+.radio-button:checked ~ .radio-tile .icon svg {
+	fill: white;
+}
+
+.radio-button:checked ~ .radio-tile .radio-tile-label {
+	color: white;
+}
 
 /* SIDE NAVIGATION */
 
 .sidenav{
 	height: 100%;
-	width: 48px;
+	width: 20%;
 	position: fixed;
 	z-index: 5;
 	top: 0;
 	left: 0;
 	background-color: #ced6db;
 	overflow-x: hidden;
-	text-align: center;
 	border-top: 3px solid #0099da;
 }
 
-.icon-spacer{
-	padding: 18px 0;
-}
-
-#back-btn{
-	padding: 18px 0;
-	height: 72px;
-	background: #0099da;
-}
-
 .sidenav a {
-	text-align: center;
 	border-bottom: none;
 	text-decoration: none;
-  }
+}
   
 .menu-icon svg{
 	fill: #303436;
@@ -288,8 +252,9 @@ a::selection {
 /* MAIN CONTNET */
 
 .container {
-	max-height: calc(100vh - 68px);
+	max-height: 100vh;
 	display: flex;
+	margin-left: 20%; 
 	flex-direction: column;
 	align-items: center;
 	counter-reset: task;
@@ -326,7 +291,6 @@ a::selection {
 .checklist:last-of-type{
 	padding-bottom: 200px;
 }
-
 
 .checklist__title {
 	font-size: 2.2em;

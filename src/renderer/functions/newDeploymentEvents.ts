@@ -27,12 +27,11 @@ export const createDeployment = async (product: string, name: string, integrator
             .objectStore('deployments')
             .add(deployment);
 
-        //retrieve the latest deployment id using cursor
+        //retrieve the latest deployment id using back-stepping cursor
         const deploymentCursor = await db
             .transaction('deployments', 'readonly')
             .objectStore('deployments')
             .openCursor(undefined, "prev");
-        
         deploymentCursor.continue();
         id = deploymentCursor.value.id;
 
@@ -63,7 +62,6 @@ export const createDeployment = async (product: string, name: string, integrator
         //go to deployment checklist
         .then(() => {
             const href = `./checklist.html?id=${id}`;
-            console.log(href)
             window.location.href = href;
         });
 }
