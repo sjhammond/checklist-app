@@ -1,36 +1,25 @@
 {
-  "name": "milestone-best-practice-deployment-app",
-  "version": "1.0.0",
-  "description": "A deployment app for Milestone XProtect",
-  "main": "dist/main/index.js",
-  "private": true,
+  "name": "electron-webpack-quick-start",
+  "version": "0.0.0",
+  "license": "MIT",
   "scripts": {
-    "start": "npm-run-all build run-electron",
-    "build": "webpack",
-    "run-electron": "electron ."
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
   },
-  "keywords": [],
-  "author": "Milestone Systems Inc.",
-  "license": "ISC",
   "dependencies": {
-    "electron": "^4.1.3",
-    "idb": "^4.0.1",
-    "jquery": "^3.3.1"
+    "idb": "^4.0.3",
+    "jquery": "^3.4.1",
+    "source-map-support": "^0.5.10"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/plugin-transform-runtime": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/runtime": "^7.4.3",
-    "@types/electron": "^1.6.10",
     "@types/jquery": "^3.3.29",
-    "@types/node": "^11.13.0",
-    "babel-loader": "^8.0.5",
-    "npm-run-all": "^4.1.5",
-    "ts-loader": "^5.3.3",
-    "typescript": "^3.4.1",
-    "webpack": "^4.29.6",
-    "webpack-cli": "^3.3.0",
-    "webpack-node-externals": "^1.7.2"
+    "electron": "4.0.1",
+    "electron-builder": "20.38.4",
+    "electron-webpack": "^2.6.2",
+    "electron-webpack-ts": "^3.2.0",
+    "typescript": "^3.4.5",
+    "webpack": "4.28.4"
   }
 }

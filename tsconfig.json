@@ -1,4 +1,5 @@
 {
+    "extends": "./node_modules/electron-webpack/tsconfig-base.json",
     "compileOnSave": false,
     "compilerOptions": {
       "baseUrl": ".",
@@ -15,12 +16,10 @@
         "skipLibCheck": true,
         "strictPropertyInitialization": false,
         "strictNullChecks": false,
-        "allowJs": true,
         "noImplicitAny": false,
         "jsx": "preserve"
     },
     "exclude": [
-      "node_modules",
-      "src/main"
+      "node_modules"
     ]
 }

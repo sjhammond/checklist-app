@@ -3,7 +3,6 @@ import { ProductTier } from "../models/product-tier";
 import { dateOptions } from "./helpers/dateOptions";
 import { dbPromise } from "../data/db";
 import { deleteDeployment } from "./deploymentListEvents";
-import { renderMainMenu } from "./menuBuilder";
 
 let deploymentData = '';
 let numberOfDeployments: number;
@@ -49,7 +48,6 @@ export const renderDeploymentList = () => {
     }).then(() => {
         const main = document.getElementById('main-content');
         main.innerHTML = finalizeDeploymentList(deploymentData);
-        renderMainMenu();
         addDeploymentListEventListeners();
     })
 }

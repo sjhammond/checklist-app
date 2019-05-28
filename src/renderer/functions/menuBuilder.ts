@@ -1,26 +1,26 @@
 export const renderMainMenu = () => {
     const menu = document.getElementById('menu'); 
     menu.innerHTML = `
-        <a href="#">My Deployments</a>
-        <a href="create-deployment.html">Create New Deployment</a>
-        <a href="#">Settings</a>
-        <a href="#">About</a>
+        <div class="menu-item" id="menu_deployment-list">Load Deployment</div>
+        <div class="menu-item" id="menu_new-deployment">New Deployment</div>
+        <div class="menu-item" id="menu_settings">Settings</div>
+        <div class="menu-item" id="menu_about">About</div>
     `
 }
 
 export const renderChecklistMenu = () => {
     const menu = document.getElementById('menu');
     menu.innerHTML = `
-        <a href="deployment-list.html">Return to List</a>
-        <div id="deployment-menu" class="menu">
-            <span class="title">Title goes here</span>
-            <a href="#">Edit Deployment</a>
+        <div class="menu-item" id="menu_return-to-deployments">Return to List</a>
+        <div class="menu-item" id="menu_deployment-info" class="menu">
+            <span id="menu_deployment-title">Title goes here</span>
+            <span id="menu_edit-deployment>Edit Deployment</span>
             <span class="header-progress-count">0/X</span>
             <span class="title-progress-border"></span>
             <span class="title-progress-bar"></span>
         </div>
-        <div id="phase-menu">
+        <div class="menu-item" id="menu_phases">
         </div>
-        <a href="#">Settings</a>
+        <div class="menu-item" id="menu_settings"> Settings</a>
     `
 }

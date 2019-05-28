@@ -1,69 +1,79 @@
-import { app, BrowserWindow } from 'electron';
-import * as path from 'path';
-import * as url from 'url';
+'use strict'
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the JavaScript object is garbage collected.
-let win: BrowserWindow;
+import { app, BrowserWindow } from 'electron'
+import * as path from 'path'
+import { format as formatUrl } from 'url'
 
-const createWindow = (): void => {
-    // Create the browser window.
-    win = new BrowserWindow({
-        icon: path.join(process.cwd(), 'dist/renderer/icons/win/favicon.ico'),
-        width: 1280,
-        height: 720,
-        minWidth: 800,
-        title: 'Milestone Best Practice Deployment Checklist',
-        titleBarStyle: 'hidden',
-        webPreferences: {
-          nodeIntegration: true
-        }
-    });
+const isDevelopment = process.env.NODE_ENV !== 'production'
 
-    //prevent app title from updating
-    win.on('page-title-updated', (evt): void => {
-        evt.preventDefault();
-    });
+// global reference to mainWindow (necessary to prevent window from being garbage collected)
+let mainWindow: BrowserWindow;
 
-    //disable the toolbar
-    win.setMenu(null);
+function createMainWindow() {
+  const window = new BrowserWindow({
+    icon: path.join(process.cwd(), 'static/icons/win/favicon.ico'),
+    minWidth: 896,
+    minHeight: 504,
+    title: 'Milestone Best Practice Deployment Checklist',
+    titleBarStyle: 'hidden',
+    webPreferences: {
+      nodeIntegration: true
+    }
+  });
 
-    // and load the index.html of the app.
-    win.loadURL(url.format({
-      pathname: path.join(process.cwd(), 'dist/renderer/app.html'),
-      protocol: 'file:',
-      slashes: true,
-  }))
+  //prevent app title from updating
+  window.on('page-title-updated', (evt): void => {
+    evt.preventDefault();
+  });
 
-    //open devtools for debugging
-    win.webContents.openDevTools()
+  //disable the toolbar
+  window.setMenu(null);
 
-    // Emitted when the window is closed.
-    win.on('closed', (): void => {
-        // Dereference the window object, usually you would store windows
-        // in an array if your app supports multi windows, this is the time
-        // when you should delete the corresponding element.
-        win = null;
+  if (isDevelopment) {
+    window.webContents.openDevTools()
+  }
+
+  if (isDevelopment) {
+    window.loadURL(`http://localhost:${process.env.ELECTRON_WEBPACK_WDS_PORT}`)
+  }
+  else {
+    window.loadURL(formatUrl({
+      pathname: path.join(__dirname, 'index.html'),
+      protocol: 'file',
+      slashes: true
+    }))
+  }
+
+  window.on('closed', () => {
+    mainWindow = null
+  })
+
+  window.webContents.on('devtools-opened', () => {
+    window.focus()
+    setImmediate(() => {
+      window.focus()
     })
-};
+  })
 
-// This method will be called when Electron has finished
-// initialization and is ready to create browser windows.
-// Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+  return window
+}
 
-// Quit when all windows are closed.
-app.on('window-all-closed', (): void => {
-    // On macOS it is common for applications and their menu bar
-    // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') app.quit()
-});
+// quit application when all windows are closed
+app.on('window-all-closed', () => {
+  // on macOS it is common for applications to stay open until the user explicitly quits
+  if (process.platform !== 'darwin') {
+    app.quit()
+  }
+})
 
-app.on('activate', (): void => {
-    // On macOS it's common to re-create a window in the app when the
-    // dock icon is clicked and there are no other windows open.
-    if (win === null) createWindow();
-});
+app.on('activate', () => {
+  // on macOS it is common to re-create a window even after all windows have been closed
+  if (mainWindow === null) {
+    mainWindow = createMainWindow()
+  }
+})
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
+// create main BrowserWindow when electron is ready
+app.on('ready', () => {
+  mainWindow = createMainWindow()
+})

@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import { createDeployment } from './newDeploymentEvents';
-import { renderMainMenu } from './menuBuilder';
 
 export const renderCreateDeployment = () => {
 
@@ -60,8 +59,6 @@ export const renderCreateDeployment = () => {
         </form>
     `
 
-    renderMainMenu();
-    
     //load svg images
     $("#essential-icon").load("./svg/essential.svg");
     $("#express-icon").load("./svg/express.svg");
