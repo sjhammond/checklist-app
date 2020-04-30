@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "idb": "^4.0.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "source-map-support": "^0.5.10"
   },
   "devDependencies": {
